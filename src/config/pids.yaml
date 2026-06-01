@@ -1,0 +1,179 @@
+# PIDs OBD-II Modo 01 prováveis no Logan 2012 1.0 16v
+# Formula segue padrão SAE J1979
+# priority: 1=alta (logger rápido), 2=média, 3=baixa (telemetria lenta)
+
+pids:
+  - code: "0101"
+    name: "monitor_status"
+    description: "Status MIL + DTCs armazenados"
+    unit: "bitmap"
+    priority: 3
+    decoder: "monitor_status"
+
+  - code: "0103"
+    name: "fuel_system_status"
+    description: "Status sistema combustível (OL/CL)"
+    unit: "code"
+    priority: 2
+    decoder: "fuel_system_status"
+
+  - code: "0104"
+    name: "engine_load"
+    description: "Carga calculada motor"
+    unit: "%"
+    priority: 2
+    decoder: "percent_a"
+
+  - code: "0105"
+    name: "coolant_temp"
+    description: "Temperatura líquido arrefecimento"
+    unit: "°C"
+    priority: 3
+    decoder: "temp_a_minus_40"
+
+  - code: "0106"
+    name: "short_fuel_trim_b1"
+    description: "Short Term Fuel Trim Banco 1"
+    unit: "%"
+    priority: 2
+    decoder: "fuel_trim"
+
+  - code: "0107"
+    name: "long_fuel_trim_b1"
+    description: "Long Term Fuel Trim Banco 1"
+    unit: "%"
+    priority: 2
+    decoder: "fuel_trim"
+
+  - code: "010B"
+    name: "intake_map"
+    description: "Pressão absoluta coletor admissão"
+    unit: "kPa"
+    priority: 1
+    decoder: "raw_a"
+
+  - code: "010C"
+    name: "engine_rpm"
+    description: "Rotação motor"
+    unit: "rpm"
+    priority: 1
+    decoder: "rpm"
+
+  - code: "010D"
+    name: "vehicle_speed"
+    description: "Velocidade veículo"
+    unit: "km/h"
+    priority: 1
+    decoder: "raw_a"
+
+  - code: "010E"
+    name: "timing_advance"
+    description: "Avanço ignição cilindro 1"
+    unit: "° antes PMS"
+    priority: 2
+    decoder: "timing_advance"
+
+  - code: "010F"
+    name: "intake_air_temp"
+    description: "Temperatura ar admissão"
+    unit: "°C"
+    priority: 3
+    decoder: "temp_a_minus_40"
+
+  - code: "0110"
+    name: "maf_flow"
+    description: "Fluxo massa ar (se equipado)"
+    unit: "g/s"
+    priority: 2
+    decoder: "maf"
+
+  - code: "0111"
+    name: "throttle_pos"
+    description: "Posição borboleta"
+    unit: "%"
+    priority: 1
+    decoder: "percent_a"
+
+  - code: "0114"
+    name: "o2_b1s1"
+    description: "Sonda Lambda Banco 1 Sensor 1 (narrow-band)"
+    unit: "V"
+    priority: 1
+    decoder: "o2_narrow"
+
+  - code: "0115"
+    name: "o2_b1s2"
+    description: "Sonda Lambda Banco 1 Sensor 2 (pós-catalisador) — D4F 1.0 sem sensor nativo, dado suspeito"
+    unit: "V"
+    priority: 3
+    decoder: "o2_narrow"
+
+  - code: "011C"
+    name: "obd_standard"
+    description: "Padrão OBD compatível"
+    unit: "code"
+    priority: 3
+    decoder: "raw_a"
+
+  - code: "011F"
+    name: "runtime_since_start"
+    description: "Tempo desde partida"
+    unit: "s"
+    priority: 3
+    decoder: "raw_ab"
+
+  - code: "0121"
+    name: "distance_mil_on"
+    description: "Distância rodada com MIL acesa"
+    unit: "km"
+    priority: 3
+    decoder: "raw_ab"
+
+  - code: "012F"
+    name: "fuel_level"
+    description: "Nível combustível"
+    unit: "%"
+    priority: 3
+    decoder: "percent_a"
+
+  - code: "0131"
+    name: "distance_since_codes_cleared"
+    description: "Distância desde apagar códigos"
+    unit: "km"
+    priority: 3
+    decoder: "raw_ab"
+
+  - code: "0142"
+    name: "control_module_voltage"
+    description: "Tensão módulo controle (bateria)"
+    unit: "V"
+    priority: 2
+    decoder: "voltage_ab"
+
+  - code: "0143"
+    name: "absolute_load"
+    description: "Carga absoluta motor"
+    unit: "%"
+    priority: 2
+    decoder: "abs_load"
+
+  - code: "0145"
+    name: "relative_throttle"
+    description: "Posição borboleta relativa"
+    unit: "%"
+    priority: 2
+    decoder: "percent_a"
+
+  - code: "0146"
+    name: "ambient_air_temp"
+    description: "Temperatura ar ambiente"
+    unit: "°C"
+    priority: 3
+    decoder: "temp_a_minus_40"
+
+  - code: "014C"
+    name: "commanded_throttle"
+    description: "Comando borboleta ECU"
+    unit: "%"
+    priority: 2
+    decoder: "percent_a"

@@ -1,0 +1,16 @@
+[project]
+name = "obd_logan_scanner"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = [
+    "flet>=0.85,<0.86",
+    "PyYAML>=6.0",
+    "pyserial>=3.5",
+]
+
+[tool.flet]
+org = "br.com.seuprojeto"
+product = "Logan OBD2 Scanner"
+company = "SeuProjeto"
+copyright = "Copyright (C) 2026 by SeuProjeto"
+module = "main"
